@@ -69,7 +69,7 @@ repohealth
 # Scan a specific repository
 repohealth /path/to/your-repository
 
-#Example for PATH
+#Example for scanning a specific repository
 repohealth /Users/siddh/Gemini-Chatbot
 ```
 
