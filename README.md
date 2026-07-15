@@ -67,6 +67,8 @@ Run the tool globally from any folder without prefixes:
 repohealth
 
 # Scan a specific repository
+repohealth /path/to/your-repository
+#Example for PATH
 repohealth /Users/siddh/Gemini-Chatbot
 ```
 
