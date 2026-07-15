@@ -11,6 +11,9 @@ Installs the tool globally. Run it from anywhere.
 ```bash
 go install github.com/DSiddharth24/RepoHealth@latest
 ```
+*Note: If you get a `command not found` error after installing, add the Go binary folder to your system PATH:*
+*   **Linux/macOS:** `export PATH=$PATH:$HOME/go/bin`
+*   **Windows (PowerShell):** `$env:Path += ";$env:GOPATH\bin"`
 
 ### Option B: Build Locally
 Manually clone and build the executable.
@@ -33,20 +36,27 @@ go build -o repohealth.exe .
 
 ## 💻 Usage
 
-> [!IMPORTANT]
-> **To run a locally built binary (Option B):**
-> *   **Linux/macOS:** Prefix with `./` (e.g. `./repohealth .`)
-> *   **Windows:** Prefix with `.\` (e.g. `.\repohealth.exe .`)
->
-> If you installed globally via Option A, you can run `repohealth` directly from any folder.
-
+### 1. If Installed Globally (Option A)
+Run the tool globally from any folder without prefixes:
 ```bash
-# Scan the current folder (Linux/macOS example)
-./repohealth .
+# Scan the current folder
+repohealth
 
 # Scan a specific repository
-./repohealth /path/to/your-repository
+repohealth /path/to/your-repository
 ```
+
+### 2. If Built Locally (Option B)
+You must specify the path to the local executable file in the current folder:
+
+*   **Linux / macOS:**
+    ```bash
+    ./repohealth /path/to/your-repository
+    ```
+*   **Windows (PowerShell):**
+    ```powershell
+    .\repohealth.exe C:\path\to\your-repository
+    ```
 
 ### Useful Flags
 | Flag | Description |
