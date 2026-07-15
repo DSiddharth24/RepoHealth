@@ -37,22 +37,22 @@ This places the `RepoHealth` binary in your `$GOPATH/bin` (or `$HOME/go/bin`). M
 repohealth
 
 # Scan a specific repository folder
-repohealth /path/to/other-project
+repohealth /path/to/your-repository
 
 # JSON output (for CI pipelines or scripting)
-repohealth --json /path/to/other-project
+repohealth --json /path/to/your-repository
 
 # Strict mode — treat warnings as failures (great for CI gating)
-repohealth --strict /path/to/other-project
+repohealth --strict /path/to/your-repository
 
 # Disable colors (for log files or CI output)
-repohealth --no-color /path/to/other-project
+repohealth --no-color /path/to/your-repository
 
 # Ignore additional patterns (repeatable)
-repohealth --ignore "*.generated.go" --ignore "testdata" /path/to/other-project
+repohealth --ignore "*.generated.go" --ignore "testdata" /path/to/your-repository
 
 # Combine flags
-repohealth --strict --json --no-color /path/to/other-project
+repohealth --strict --json --no-color /path/to/your-repository
 ```
 
 ### Quick Start Walkthrough
@@ -63,10 +63,10 @@ Here is a step-by-step guide on how to scan a different folder on your machine:
 2. **Execute the tool** and point it to the repository folder you want to inspect:
    ```bash
    # On macOS/Linux:
-   repohealth /Users/username/projects/another-repo
+   repohealth /path/to/your-repository
 
    # On Windows:
-   repohealth C:\Users\username\projects\another-repo
+   repohealth C:\path\to\your-repository
    ```
 3. **Understand the output:**
    - The scanner will recursively walk the target folder.
@@ -81,6 +81,28 @@ Here is a step-by-step guide on how to scan a different folder on your machine:
 | **Broken Links** | All internal `.md` links resolve | — | Any `[text](./path)` pointing to a nonexistent file |
 | **Large Files** | All files under 5 MB | Any file 5–25 MB | Any file over 25 MB |
 | **Standard Files** | LICENSE and .gitignore present | Either one missing | — |
+
+## How to Fix Health Issues (Your Action Checklist)
+
+If your repository gets warnings or failures, here is exactly what you need to do to resolve them step-by-step:
+
+1. **Fixing README issues:**
+   - **If Missing:** Create a `README.md` file in the root folder of your project.
+   - **If it's a Stub (less than 150 words):** Expand the README to explain what the project is, how to install it, and how to use it.
+   - **If Unstructured (no headings):** Use markdown headers (like `# Project Name` or `## Installation`) to organize your content.
+
+2. **Fixing Broken Links:**
+   - Look at the files flagged in the report (e.g., `README.md → ./LICENSE`).
+   - Check if you have typos in the relative links or if you referenced files that were deleted or renamed.
+   - Correct the link target path relative to the file containing it, or create the missing file.
+
+3. **Fixing Large Files:**
+   - **If a file is over 25MB (Failure) or over 5MB (Warning):** Determine if this file should be part of the repository history (e.g. large assets, binaries, database dumps, node modules, build files).
+   - **To Resolve:** Add the pattern or file name to your `.gitignore` file (e.g., `*.mp4`, `build/`, `node_modules/`). Once ignored, `RepoHealth` will skip checking it.
+
+4. **Fixing Standard Files:**
+   - **If LICENSE is missing:** Create a file named `LICENSE`, `LICENSE.md`, or `LICENSE.txt` at the root and fill it with your repository's license text (e.g., MIT, Apache 2.0).
+   - **If .gitignore is missing:** Create a `.gitignore` file at the root to specify which temporary build files, logs, or dependency folders git should ignore.
 
 ## Example Output
 
