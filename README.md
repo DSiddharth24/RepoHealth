@@ -6,7 +6,11 @@ Point it at any directory and get an honest report on whether it looks like a we
 
 ## Installation
 
-### From Source (requires Go 1.22+)
+Choose **one** of the following installation methods:
+
+### Option 1: From Source (Clone and Build)
+
+Use this option if you want to inspect the source code or build it manually:
 
 ```bash
 # Clone the repo
@@ -22,13 +26,15 @@ sudo mv repohealth /usr/local/bin/
 # Windows: move repohealth.exe to a folder in your PATH
 ```
 
-### Using `go install`
+### Option 2: Using `go install` (Fastest)
+
+Use this option to install it instantly without manually cloning the folder:
 
 ```bash
 go install github.com/DSiddharth24/RepoHealth@latest
 ```
 
-This places the `RepoHealth` binary in your `$GOPATH/bin` (or `$HOME/go/bin`). Make sure that directory is in your `PATH`.
+This installs the binary directly to your `$GOPATH/bin` (or `$HOME/go/bin`). Make sure that folder is in your environment `PATH`.
 
 ## Usage
 
