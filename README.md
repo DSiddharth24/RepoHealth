@@ -7,13 +7,25 @@ A fast Go CLI tool to scan a repository's health: README quality, broken interna
 ## 🚀 Quick Start (Choose One)
 
 ### Option A: Install Globally (Fastest)
-Installs the tool globally. Run it from anywhere.
+
+Follow these **two mandatory steps** to install globally:
+
+#### Step 1: Install the package
 ```bash
 go install github.com/DSiddharth24/RepoHealth@latest
 ```
-*Note: If you get a `command not found` error after installing, add the Go binary folder to your system PATH:*
-*   **Linux/macOS:** `export PATH=$PATH:$HOME/go/bin`
-*   **Windows (PowerShell):** `$env:Path += ";$env:GOPATH\bin"`
+
+#### Step 2: Add Go Binary directory to PATH
+To ensure your shell recognizes the `repohealth` command, add the installation folder to your environment PATH:
+
+*   **Windows (PowerShell):**
+    ```powershell
+    $env:Path += ";$env:GOPATH\bin"
+    ```
+*   **Linux / macOS:**
+    ```bash
+    export PATH=$PATH:$HOME/go/bin
+    ```
 
 ### Option B: Build Locally
 Manually clone and build the executable.
