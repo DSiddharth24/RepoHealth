@@ -14,7 +14,16 @@ go install github.com/DSiddharth24/RepoHealth@latest
 
 ### Option B: Build Locally
 Manually clone and build the executable.
+
+**Linux / macOS:**
 ```bash
+git clone https://github.com/DSiddharth24/RepoHealth.git
+cd RepoHealth
+go build -o repohealth .
+```
+
+**Windows:**
+```powershell
 git clone https://github.com/DSiddharth24/RepoHealth.git
 cd RepoHealth
 go build -o repohealth.exe .
@@ -25,14 +34,18 @@ go build -o repohealth.exe .
 ## 💻 Usage
 
 > [!IMPORTANT]
-> **PowerShell Users:** If running a locally built binary (Option B), you must prefix the command with `.\` (e.g., `.\repohealth.exe`).
+> **To run a locally built binary (Option B):**
+> *   **Linux/macOS:** Prefix with `./` (e.g. `./repohealth .`)
+> *   **Windows:** Prefix with `.\` (e.g. `.\repohealth.exe .`)
+>
+> If you installed globally via Option A, you can run `repohealth` directly from any folder.
 
 ```bash
-# Scan the current folder
-repohealth
+# Scan the current folder (Linux/macOS example)
+./repohealth .
 
 # Scan a specific repository
-repohealth /path/to/your-repository
+./repohealth /path/to/your-repository
 ```
 
 ### Useful Flags
