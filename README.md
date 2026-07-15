@@ -67,7 +67,7 @@ Run the tool globally from any folder without prefixes:
 repohealth
 
 # Scan a specific repository
-repohealth /path/to/your-repository
+repohealth /Users/siddh/Gemini-Chatbot
 ```
 
 ### 2. If Built Locally (Option B)
@@ -75,11 +75,11 @@ You must specify the path to the local executable file in the current folder:
 
 *   **Linux / macOS:**
     ```bash
-    ./repohealth /path/to/your-repository
+    ./repohealth /Users/siddh/Gemini-Chatbot
     ```
 *   **Windows (PowerShell):**
     ```powershell
-    .\repohealth.exe C:\path\to\your-repository
+    .\repohealth.exe C:\Users\siddh\Gemini-Chatbot
     ```
 
 ### Useful Flags
