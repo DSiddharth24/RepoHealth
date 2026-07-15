@@ -38,6 +38,11 @@ This installs the binary directly to your `$GOPATH/bin` (or `$HOME/go/bin`). Mak
 
 ## Usage
 
+> [!IMPORTANT]
+> **Windows PowerShell/CMD Users:** If you built the tool from source and are running it locally in the folder, you must use `.\repohealth` or `.\repohealth.exe` instead of just `repohealth`.
+>
+> Examples below assume a global installation. If using a local binary, prefix them with `.\`.
+
 ```bash
 # Scan the current directory
 repohealth
