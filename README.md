@@ -4,6 +4,18 @@ A fast Go CLI tool to scan a repository's health: README quality, broken interna
 
 ---
 
+## 📋 Prerequisites
+
+Before installing, you must have **Go (GoLang) 1.22 or higher** installed on your system.
+
+*   Download it from the official site: **[go.dev/doc/install](https://go.dev/doc/install)**
+*   Verify it is installed by running this command in your terminal:
+    ```bash
+    go version
+    ```
+
+---
+
 ## 🚀 Quick Start (Choose One)
 
 ### Option A: Install Globally (Fastest)
