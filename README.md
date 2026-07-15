@@ -188,6 +188,31 @@ jobs:
 go test ./... -v -count=1
 ```
 
+## Troubleshooting
+
+### 1. Error: `fatal: destination path 'RepoHealth' already exists...`
+* **Why it happens:** You already have a folder named `RepoHealth` in the directory where you ran `git clone`. Because of this, Git did not download the new files.
+* **How to fix:** Delete the existing `RepoHealth` directory (or rename it) and run the `git clone` command again. Alternatively, clone it under a different name:
+  ```bash
+  git clone https://github.com/DSiddharth24/RepoHealth.git RepoHealthTool
+  cd RepoHealthTool
+  ```
+
+### 2. Error: `go: cannot find main module...`
+* **Why it happens:** You are trying to run `go build` inside a folder that is empty or does not contain the project files (such as `main.go` and `go.mod`).
+* **How to fix:** Ensure you changed directory into the correct folder where the code is:
+  ```bash
+  cd RepoHealth
+  # Check if go.mod exists in the folder before building
+  ```
+
+### 3. Error: `The term 'repohealth' is not recognized...`
+* **Why it happens:** You are trying to execute the locally built program directly on Windows PowerShell without specifying its relative path.
+* **How to fix:** Prefix the command with `.\` so PowerShell knows to look in the current folder:
+  ```powershell
+  .\repohealth.exe .
+  ```
+
 ## License
 
 MIT — see [LICENSE](./LICENSE) for details.
